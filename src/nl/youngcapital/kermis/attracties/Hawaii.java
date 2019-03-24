@@ -2,11 +2,12 @@ package nl.youngcapital.kermis.attracties;
 
 
 public class Hawaii extends RisicoRijkeAttractie{
-   int rondesGedraaid;
 	public Hawaii(){
 	   super("Hawaii", 2.90);
-	   super.draaiLimiet = 5; 
+	   this.draaiLimiet = 5; 
+	   this.rondesSindsLaatsteKeuring = 0;
    }
-	public void opstellingsKeuring(){	
+	public void opstellingsKeuring(){
+		this.rondesSindsLaatsteKeuring = 0;
 	}
 }

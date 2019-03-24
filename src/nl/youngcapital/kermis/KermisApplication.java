@@ -31,8 +31,10 @@ class Kermis{
 	System.out.println("Toets 6 om de ladderklimmenattractie te laten draaien");
 	System.out.println("Toets o om de omzet van de kermis te zien.");
 	System.out.println("Toets k om te zien hoeveel kaartjes er zijn verkocht.");
-	System.out.println("Toets c om te checken hoeveel rondes de spin attractie heeft gedraaid sinds de vorige opstellingskeuring..");
+	System.out.println("Toets c om te checken hoeveel rondes de spin attractie heeft gedraaid sinds de vorige opstellingskeuring.");
 	System.out.println("Toets s om een opstellingskeuring uit te voeren op de spin attractie.");
+	System.out.println("Toets v om te checken hoeveel rondes de hawaii attractie heeft gedraaid sinds de vorige opstellingskeuring.");
+	System.out.println("Toets h om een opstellingskeuring uit te voeren op de hawaii attractie.");
 	}
 	void kermisDraaien() {
 		String invoer = scanner.next();
@@ -103,6 +105,14 @@ class Kermis{
 			System.out.println("De spin is gekeurd.");
 			System.out.println("De spin heeft " + ((RisicoRijkeAttractie)spin).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");
 			invoer = scanner.next();
+		}
+		if("v".equals(invoer)) {
+			System.out.println("De hawaii attractie heeft " + ((RisicoRijkeAttractie)hawaii).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");		
+		}
+		if("h".equals(invoer)) {
+			((RisicoRijkeAttractie)hawaii).opstellingsKeuring();
+			System.out.println("De hawaii attractie is gekeurd.");
+			System.out.println("De hawaii attractie heeft " + ((RisicoRijkeAttractie)hawaii).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");
 		}
 	}
 	System.out.println("De kermis is afgelopen");
