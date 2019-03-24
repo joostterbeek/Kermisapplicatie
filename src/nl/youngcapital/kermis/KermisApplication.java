@@ -35,6 +35,7 @@ class Kermis{
 	System.out.println("Toets s om een opstellingskeuring uit te voeren op de spin attractie.");
 	System.out.println("Toets v om te checken hoeveel rondes de hawaii attractie heeft gedraaid sinds de vorige opstellingskeuring.");
 	System.out.println("Toets h om een opstellingskeuring uit te voeren op de hawaii attractie.");
+	System.out.println("Toets b om belasting te betalen.");
 	}
 	void kermisDraaien() {
 		String invoer = scanner.next();
@@ -107,12 +108,22 @@ class Kermis{
 			invoer = scanner.next();
 		}
 		if("v".equals(invoer)) {
-			System.out.println("De hawaii attractie heeft " + ((RisicoRijkeAttractie)hawaii).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");		
+			System.out.println("De hawaii attractie heeft " + ((RisicoRijkeAttractie)hawaii).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");	
+			invoer = scanner.next();
 		}
 		if("h".equals(invoer)) {
 			((RisicoRijkeAttractie)hawaii).opstellingsKeuring();
 			System.out.println("De hawaii attractie is gekeurd.");
 			System.out.println("De hawaii attractie heeft " + ((RisicoRijkeAttractie)hawaii).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");
+			invoer = scanner.next();
+		}
+		if("b".equals(invoer)) {
+			((GokAttractie)ladderklimmen).kansSpelBelastingBetalen();
+			System.out.println("U moet " + ((LadderKlimmen)ladderklimmen).kansSpelBelasting + " euro belasting betalen.");
+			totaleopbrengst = totaleopbrengst - ((LadderKlimmen)ladderklimmen).kansSpelBelasting;
+			((LadderKlimmen)ladderklimmen).kansSpelBelasting = 0;
+			System.out.println("Uw totale opbrengst is na het betalen van de belasting " + totaleopbrengst + " euro.");
+			invoer = scanner.next();
 		}
 	}
 	System.out.println("De kermis is afgelopen");
