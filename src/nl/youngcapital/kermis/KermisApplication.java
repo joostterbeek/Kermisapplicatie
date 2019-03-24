@@ -31,6 +31,8 @@ class Kermis{
 	System.out.println("Toets 6 om de ladderklimmenattractie te laten draaien");
 	System.out.println("Toets o om de omzet van de kermis te zien.");
 	System.out.println("Toets k om te zien hoeveel kaartjes er zijn verkocht.");
+	System.out.println("Toets c om te checken hoeveel rondes de spin attractie heeft gedraaid sinds de vorige opstellingskeuring..");
+	System.out.println("Toets s om een opstellingskeuring uit te voeren op de spin attractie.");
 	}
 	void kermisDraaien() {
 		String invoer = scanner.next();
@@ -49,6 +51,7 @@ class Kermis{
 			totaleopbrengst = totaleopbrengst + spin.prijs;
 			spin.kaartjes++;
 			totaalaantalkaartjesverkocht++;
+			((RisicoRijkeAttractie)spin).rondesSindsLaatsteKeuring++;
 			invoer = scanner.next();
 		}
 		if("3".equals(invoer)) {
@@ -92,7 +95,13 @@ class Kermis{
 			invoer = scanner.next();
 		}
 		if("c".equals(invoer)) {
-			System.out.println("De Spin heeft " + spin.kaartjes + " rondes gedraaid sinds opstellingskeuring.");
+			System.out.println("De Spin heeft " + ((RisicoRijkeAttractie)spin).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");
+			invoer = scanner.next();
+		}
+		if("s".equals(invoer)) {
+			((RisicoRijkeAttractie)spin).opstellingsKeuring();
+			System.out.println("De spin is gekeurd.");
+			System.out.println("De spin heeft " + ((RisicoRijkeAttractie)spin).rondesSindsLaatsteKeuring + " rondes gedraaid sinds opstellingskeuring.");
 			invoer = scanner.next();
 		}
 	}

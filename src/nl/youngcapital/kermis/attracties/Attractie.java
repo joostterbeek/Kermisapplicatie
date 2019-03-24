@@ -25,13 +25,4 @@ public class Attractie {
    
 }
 
-abstract class RisicoRijkeAttractie extends Attractie {
-	 	int rondesGedraaid;
-	 	int draaiLimiet;
-		RisicoRijkeAttractie(String attractieNaam, double price){
-			super(attractieNaam, price);
-		}
-		void opstellingsKeuring() {
-		}
-		
-}
+

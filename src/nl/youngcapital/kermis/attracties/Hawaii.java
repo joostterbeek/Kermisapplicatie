@@ -7,4 +7,6 @@ public class Hawaii extends RisicoRijkeAttractie{
 	   super("Hawaii", 2.90);
 	   super.draaiLimiet = 5; 
    }
+	public void opstellingsKeuring(){	
+	}
 }
